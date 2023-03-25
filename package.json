@@ -1,0 +1,11 @@
+{
+  "name": "weapon-muzeum",
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss -i styles/index.css -o ./dist/styles.min.css --watch --minify"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.7"
+  }
+}

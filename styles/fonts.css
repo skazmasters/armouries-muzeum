@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Molot";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("../fonts/molot-regular.woff2") format("woff2"),
+    url("../fonts/molot-regular.woff") format("woff"),
+    url("../fonts/molot-regular.otf") format("otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Jost-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Jost-Medium.woff2") format("woff2");
+  font-display: swap;
+}
