@@ -1,6 +1,10 @@
 @import "fonts.css";
 @import "keen-slider.css";
 
+:root {
+  --vh: 1vh
+}
+
 @tailwind base;
 @layer base {
   html {
@@ -142,7 +146,7 @@
   }
 
   .hero-image__picture {
-    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu opacity-80;
+    @apply absolute lg:inset-0 -z-1 block w-full object-contain transform-gpu opacity-80;
   }
 
   @screen sm {
@@ -167,7 +171,7 @@
 
   @screen msm {
     .hero-image__picture {
-      transform: rotate(-74deg) scaleX(2) scaleY(2) translateX(1rem);
+      transform: rotate(-74deg) scale(2.1) translateX(-20%) translateY(25%)
     }
   }
 
@@ -182,14 +186,28 @@
 @tailwind utilities;
 
 
-@supports (height: max(100%,40vh)) {
+@supports (height: min(100%,40vh)) {
   .hero-image__picture {
-    height: max(100%, 40vh);
+    height: min(100%, 15vh);
   }
 }
 
-@supports not (height: max(100%,40vh)) {
+@supports not (height: min(100%,40vh)) {
   .hero-image__picture {
-    height: 40vh;
+    height: 15vh;
+  }
+}
+
+
+@supports (height: 100svh) {
+  .screen {
+    height: 100svh;
+  }
+}
+
+@supports not (height: 100svh) {
+  .screen {
+    height: calc(var(--vh) * 1);
+    /*height: calc(100vh - env(safe-area-inset-bottom, 0px));*/
   }
 }
