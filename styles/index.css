@@ -109,6 +109,42 @@
     @apply inline-block w-full py-3 px-4 rounded-lg border border-primary bg-primary hover:bg-red-700 hover:border-red-700 transition-colors font-semibold
   }
 
+  .main-logo {
+    @apply relative flex items-center grow h-fit
+  }
+
+  .main-logo__desktop {
+    @apply hidden lg:block w-full h-full lg:max-h-[90px] xl:max-h-[130px]
+  }
+
+  .main-logo__mobile {
+    @apply block lg:hidden w-full h-full max-w-[400px];
+  }
+
+  @supports (aspect-ratio: 1/1) {
+    .main-logo__mobile {
+      @apply aspect-[328/104]
+    }
+  }
+
+  @supports not (aspect-ratio: 1/1) {
+    .main-logo {
+      @apply before:w-full before:block before:pt-[33%] max-w-[330px]
+    }
+
+    .main-logo__mobile {
+      @apply absolute inset-y-0
+    }
+  }
+
+  .hero-image {
+    @apply relative w-full h-full
+  }
+
+  .hero-image__picture {
+    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu msm:-translate-y-5 msm:translate-x-5 -rotate-[74deg] sm:-rotate-45 scale-[1.75] sm:scale-125 lg:transform-none
+  }
+
   @screen mmd {
     .groups-table tbody {
       @apply block space-y-7
@@ -127,47 +163,9 @@
 @tailwind utilities;
 
 
-.main-logo {
-  @apply relative flex items-center grow h-fit
-}
-
-.main-logo__desktop {
-  @apply hidden lg:block w-full h-full lg:max-h-[90px] xl:max-h-[130px]
-}
-
-.main-logo__mobile {
-  @apply block lg:hidden w-full h-full max-w-[400px];
-}
-
-@supports (aspect-ratio: 1/1) {
-  .main-logo__mobile {
-    @apply aspect-[328/104]
-  }
-}
-
-@supports not (aspect-ratio: 1/1) {
-  .main-logo {
-    @apply before:w-full before:block before:pt-[33%] max-w-[330px]
-  }
-
-  .main-logo__mobile {
-    @apply absolute inset-y-0
-  }
-}
-
-
-.hero-image {
-  @apply relative w-full h-full
-}
-
-.hero-image__picture {
-  @apply absolute inset-x-0 inset-y-0 md:inset-0 -z-1 block w-full object-contain
-  transform-gpu msm:-translate-y-5 msm:translate-x-5 -rotate-[74deg] sm:-rotate-45 scale-[1.75] sm:scale-125 lg:transform-none
-}
-
 @supports (height: max(100%,40vh)) {
   .hero-image__picture {
-    @apply h-[max(100%,40vh)]
+    height: max(100%,40vh);
   }
 }
 
