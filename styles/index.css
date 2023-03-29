@@ -167,7 +167,7 @@
 
   @screen msm {
     .hero-image__picture {
-      transform: rotate(-74deg) scaleX(2) scaleY(2) translateX(1.25rem);
+      transform: rotate(-74deg) scaleX(2) scaleY(2) translateX(-1.25rem);
     }
   }
 }
