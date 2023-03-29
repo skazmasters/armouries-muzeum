@@ -207,7 +207,7 @@
 
 @supports not (height: 100svh) {
   .screen {
-    height: calc(var(--vh) * 1);
+    height: calc(var(--vh) * 100);
     /*height: calc(100vh - env(safe-area-inset-bottom, 0px));*/
   }
 }
