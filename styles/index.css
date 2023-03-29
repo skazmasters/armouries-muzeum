@@ -142,7 +142,7 @@
   }
 
   .hero-image__picture {
-    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu lg:transform-none;
+    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu lg:transform-none opacity-80 lg:opacity-100;
   }
 
   @screen sm {
@@ -167,7 +167,7 @@
 
   @screen msm {
     .hero-image__picture {
-      transform: rotate(-74deg) scaleX(1.75) scaleY(1.75) translateX(1.25rem) translateY(-1.25rem);
+      transform: rotate(-74deg) scaleX(2) scaleY(2) translateX(1.25rem);
     }
   }
 }
