@@ -142,7 +142,13 @@
   }
 
   .hero-image__picture {
-    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu msm:-translate-y-5 msm:translate-x-5 -rotate-[74deg] sm:-rotate-45 scale-[1.75] sm:scale-125 lg:transform-none
+    @apply absolute inset-0 -z-1 block w-full object-contain transform-gpu lg:transform-none;
+  }
+
+  @screen sm {
+    .hero-image__picture {
+      transform: rotate(-45deg) scaleX(1.25) scaleY(1.25)
+    }
   }
 
   @screen mmd {
@@ -156,6 +162,12 @@
 
     .groups-table tbody tr td {
       @apply text-sm basis-[calc(100%-130px)] first:basis-full first:mb-2.5 first:text-center first:text-2xl first:bg-white/25 first:rounded last:basis-[130px]
+    }
+  }
+
+  @screen msm {
+    .hero-image__picture {
+      transform: rotate(-74deg) scaleX(1.75) scaleY(1.75) translateX(1.25rem) translateY(-1.25rem);
     }
   }
 }
