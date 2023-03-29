@@ -16,22 +16,22 @@
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="./build/styles.min.css">
+  <link rel="stylesheet" href="./dist/styles.min.css">
 </head>
 <body>
 <div class="flex flex-col min-h-screen overflow-hidden">
   <header class="flex flex-col h-screen container py-5 xl:pt-10 xxl:pt-15 xl2k:pt-20">
     <div class="relative lg:pr-35">
-      <div class="flex lg:grid lg:max-w-[97%]">
-        <div class="grow flex items-center h-fit">
-          <svg class="hidden lg:block w-full h-full lg:max-h-[90px] xl:max-h-[130px]">
+      <div class="flex lg:grid justify-between lg:max-w-[97%]">
+        <div class="main-logo">
+          <svg class="main-logo__desktop">
             <use xlink:href="./images/sprites/sprite.svg#logo-text-desktop"></use>
           </svg>
-          <svg class="block lg:hidden w-full h-full max-w-[400px] aspect-[328/104] ">
+          <svg class="main-logo__mobile">
             <use xlink:href="./images/sprites/sprite.svg#logo-text-mobile"></use>
           </svg>
         </div>
-        <div class="block lg:hidden grow-0 pt-2 sm:pt-4">
+        <div class="block lg:hidden grow-0 pt-2 lg:pt-4">
           <button class="p-2 -mr-2 js-header-open" type="button">
             <svg class="w-8 h-8 md:w-10 md:h-10">
               <use xlink:href="./images/sprites/sprite.svg#menu"></use>
@@ -79,12 +79,12 @@
     </div>
 
     <div class="grow py-10">
-      <div class="relative w-full h-full">
+      <div class="hero-image">
         <picture>
           <source type="images/webp" srcset="images/homepage/hero-cta.webp">
           <source type="images/jpeg" srcset="images/homepage/hero-cta.jpg">
           <img
-            class="absolute inset-x-0 inset-y-0 md:inset-0 -z-1 block w-full h-[max(100%,40vh)] object-contain transform-gpu msm:-translate-y-5 msm:translate-x-5 -rotate-[74deg] sm:-rotate-45 scale-[2] sm:scale-125 lg:transform-none"
+            class="hero-image__picture"
             width="8192" height="2786"
             src="./images/homepage/hero-cta.jpg"
             alt="Hero image"

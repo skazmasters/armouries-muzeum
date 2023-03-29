@@ -33,6 +33,7 @@
   .h1 {
     @apply text-[min(calc(10px+3.5vw+3.5vh),54px)] leading-none md:text-8xl lg:text-[115px] lg:leading-[135px]
   }
+
   .h2 {
     @apply text-[min(calc(15px+1.5vw+1.5vh),34px)] leading-none sm:text-6xl lg:text-[80px] leading-[1.1]
   }
@@ -40,6 +41,7 @@
   .typo-text {
     @apply text-base leading-[24px]
   }
+
   .typo-text-lg {
     @apply text-[22px] leading-9
   }
@@ -76,23 +78,25 @@
   /*  @apply h-[min(500px,50vw)];*/
   /*  perspective: 100px;*/
   /*}*/
-
   /*.zoom-out__slide div {*/
   /*  @apply overflow-hidden absolute w-full h-full will-change-transform;*/
   /*}*/
-
   .groups-table {
     @apply flex md:table relative
   }
+
   .groups-table thead th {
     @apply relative mmd:hidden before:absolute before:inset-0 before:-z-1 before:h-full before:bg-white/20 before:backdrop-blur
   }
+
   .groups-table tbody td {
     @apply text-base leading-6
   }
+
   .groups-table tbody td {
     @apply py-3 px-4 md:text-center md:border border-white
   }
+
   .groups-table thead th {
     @apply py-2.5 px-4 text-[21px] leading-6 font-medium md:text-center border border-white
   }
@@ -105,13 +109,64 @@
     @apply inline-block w-full py-3 px-4 rounded-lg border border-primary bg-primary hover:bg-red-700 hover:border-red-700 transition-colors font-semibold
   }
 
+  .main-logo {
+    @apply relative flex items-center grow h-fit
+  }
+
+  .main-logo__desktop {
+    @apply hidden lg:block w-full h-full lg:max-h-[90px] xl:max-h-[130px]
+  }
+
+  .main-logo__mobile {
+    @apply block lg:hidden w-full h-full max-w-[400px];
+  }
+
+  @supports (aspect-ratio: 1/1) {
+    .main-logo__mobile {
+      @apply aspect-[328/104]
+    }
+  }
+
+  @supports not (aspect-ratio: 1/1) {
+    .main-logo {
+      @apply before:w-full before:block before:pt-[33%] max-w-[330px]
+    }
+    .main-logo__mobile {
+      @apply absolute inset-y-0
+    }
+  }
+
+  .hero-image {
+    @apply relative w-full h-full
+  }
+
+  .hero-image__picture {
+    @apply absolute inset-x-0 inset-y-0 md:inset-0 -z-1 block w-full object-contain
+    transform-gpu msm:-translate-y-5 msm:translate-x-5 -rotate-[74deg] sm:-rotate-45 scale-[1.75] sm:scale-125 lg:transform-none
+  }
+
+  @supports (height: max(100%,40vh)) {
+    .hero-image__picture {
+      @apply h-[max(100%,40vh)]
+    }
+  }
+
+  @supports not (height: max(100%,40vh)) {
+    .hero-image__picture {
+      height: 40vh;
+    }
+  }
+
+
   @screen mmd {
     .groups-table tbody {
       @apply block space-y-7
     }
+
     .groups-table tbody tr {
       @apply flex flex-wrap items-start
     }
+
     .groups-table tbody tr td {
       @apply text-sm basis-[calc(100%-130px)] first:basis-full first:mb-2.5 first:text-center first:text-2xl first:bg-white/25 first:rounded last:basis-[130px]
     }
